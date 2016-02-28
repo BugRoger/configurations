@@ -43,6 +43,11 @@
     <logger name="javax.jmdns.impl" level="OFF"/>
     <logger name="javax.jmdns.impl.constants" level="OFF"/>
 
+  <!-- Change DEBUG->TRACE for even more detailed logging -->
+  <logger name="org.openhab.binding.zwave" level="DEBUG" additivity="false">
+   <appender-ref ref="STDOUT" />
+  </logger>
+
   <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>
