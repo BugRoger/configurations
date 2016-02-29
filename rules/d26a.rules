@@ -1,0 +1,9 @@
+
+rule "Master OFF"
+when
+    Item Licht changed to OFF
+then
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
+    sendCommand(Licht_Oben_Schlafen, OFF)
+    sendCommand(Licht_Unten, OFF)
+end       
