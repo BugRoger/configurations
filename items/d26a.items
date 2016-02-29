@@ -19,10 +19,10 @@ Group:Switch:OR(ON, OFF)	Licht_Unten	"Unten [(%d)]"	(All)
 
 
 /* Lights */
-Switch Licht_Oben_Arbeiten_Monitor_Backlight "Backlight"     (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0"}
-Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"   (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0", zwave="2:command=SWITCH_BINARY"}
-Switch Licht_Oben_Schlafen                   "Schlafen"      (Licht, Licht_Oben, Oben, Oben_Schlafen)  {knx="2/0/0" ,zwave="4:command=SWITCH_BINARY"}
-Switch Licht_Unten_Wohnen                    "Wohnen"        (Licht, Licht_Unten, Unten, Unten_Wohnen) {knx="2/1/0", zwave="5:command=SWITCH_BINARY"}
+Switch Licht_Oben_Arbeiten_Monitor_Backlight "Backlight"       {knx="2/0/0"}
+Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"     {knx="2/0/0", zwave="2:command=SWITCH_BINARY"}
+Switch Licht_Oben_Schlafen                   "Schlafen"        {knx="2/0/0" ,zwave="4:command=SWITCH_BINARY"}
+Switch Licht_Unten_Wohnen                    "Wohnen"          {knx="2/1/0", zwave="5:command=SWITCH_BINARY"}
 
 Switch Licht_Master "Master Off" {knx="2/2/0"}
 
