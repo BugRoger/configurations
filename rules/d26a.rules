@@ -1,12 +1,44 @@
 
 rule "Master OFF"
 when
-    Item Licht_Master received command OFF
+    Item KNX_Licht_Master received command OFF
 then
 	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
     sendCommand(Licht_Oben_Schlafen, OFF)
     sendCommand(Licht_Unten, OFF)
 end       
+
+rule "Licht Oben An"
+when
+    Item KNX_Licht_Oben received command ON
+then
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, ON)
+    sendCommand(Licht_Oben_Schlafen, ON)
+end       
+
+rule "Licht Oben Aus"
+when
+    Item KNX_Licht_Oben received command OFF
+then
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
+    sendCommand(Licht_Oben_Schlafen, OFF)
+end       
+
+rule "Licht Unten An"
+when
+    Item KNX_Licht_Unten received command ON
+then
+	sendCommand(Licht_Unten, ON)
+end       
+
+rule "Licht Unten Aus"
+when
+    Item KNX_Licht_Unten received command OFF
+then
+	sendCommand(Licht_Unten, OFF)
+end       
+
+
 
 
 rule "Button1 ON"
