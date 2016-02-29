@@ -24,7 +24,7 @@ Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"     {knx="2/0/0", zwa
 Switch Licht_Oben_Schlafen                   "Schlafen"        {knx="2/0/0" ,zwave="4:command=SWITCH_BINARY"}
 Switch Licht_Unten_Wohnen                    "Wohnen"          {knx="2/1/0", zwave="5:command=SWITCH_BINARY"}
 
-Switch Licht_Master "Master Off" {knx="2/2/0"}
+Switch Licht_Master "Master Off" {knx="2/2/0", autoupdate="false"}
 
 Switch Funk_Button1 "Funk Button1" {zwave="10:command=SCENE_ACTIVATION,scene=11,state=1"}
 Switch Funk_Button2 "Funk Button2" {zwave="10:command=SCENE_ACTIVATION,scene=21,state=1"}
