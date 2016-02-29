@@ -28,14 +28,14 @@ rule "Licht Unten An"
 when
     Item KNX_Licht_Unten received command ON
 then
-	sendCommand(Licht_Unten, ON)
+	sendCommand(Licht_Unten_Wohnen, ON)
 end       
 
 rule "Licht Unten Aus"
 when
     Item KNX_Licht_Unten received command OFF
 then
-	sendCommand(Licht_Unten, OFF)
+	sendCommand(Licht_Unten_Wohnen, OFF)
 end       
 
 
