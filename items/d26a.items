@@ -12,16 +12,19 @@ Group Oben_Arbeiten   "Schreibtisch"    (Oben)
 Group Oben_Schlafen   "Bett"	        (Oben)
 
 /* active groups */
-Group:Switch:OR(ON, OFF)	Licht	    "Alles [(%d)]"	(All) {knx="2/2/0"}
+Group:Switch:OR(ON, OFF)	Licht	    "Alles [(%d)]"	(All) 
 Group:Switch:OR(ON, OFF)	Licht_Oben	"Oben [(%d)]"	(All) 
 Group:Switch:OR(ON, OFF)	Licht_Unten	"Unten [(%d)]"	(All) 
 
+
+
 /* Lights */
-Switch Licht_Oben_Arbeiten_Monitor_Backlight "Backlight"     (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0+2/0/1", zwave="2:command=SWITCH_BINARY"}
-Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"   (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0+2/0/1", zwave="2:command=SWITCH_BINARY"}
-Switch Licht_Oben_Schlafen                   "Schlafen"      (Licht, Licht_Oben, Oben, Oben_Schlafen)  {knx="2/0/0+2/0/1" ,zwave="4:command=SWITCH_BINARY"}
+Switch Licht_Oben_Arbeiten_Monitor_Backlight "Backlight"     (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0"}
+Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"   (Licht, Licht_Oben, Oben, Oben_Arbeiten)  {knx="2/0/0", zwave="2:command=SWITCH_BINARY"}
+Switch Licht_Oben_Schlafen                   "Schlafen"      (Licht, Licht_Oben, Oben, Oben_Schlafen)  {knx="2/0/0" ,zwave="4:command=SWITCH_BINARY"}
 Switch Licht_Unten_Wohnen                    "Wohnen"        (Licht, Licht_Unten, Unten, Unten_Wohnen) {knx="2/1/0", zwave="5:command=SWITCH_BINARY"}
 
+Switch Licht_Master "Master Off" {knx="2/2/0"}
 
 Switch Funk_Button1 "Funk Button1" {zwave="10:command=SCENE_ACTIVATION,scene=11,state=1"}
 Switch Funk_Button2 "Funk Button2" {zwave="10:command=SCENE_ACTIVATION,scene=21,state=1"}
