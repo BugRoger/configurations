@@ -7,3 +7,31 @@ then
     sendCommand(Licht_Oben_Schlafen, OFF)
     sendCommand(Licht_Unten, OFF)
 end       
+
+rule "Button1 ON"
+when
+    Item Funk_Button1 changed to ON
+then
+	sendCommand(Licht_Oben, ON)
+end       
+
+rule "Button2 ON"
+when
+    Item Funk_Button2 changed to ON
+then
+	sendCommand(Licht_Oben, OFF)
+end       
+
+rule "Button3 ON"
+when
+    Item Funk_Button3 changed to ON
+then
+	sendCommand(Licht_Unten, ON)
+end       
+
+rule "Button4 ON"
+when
+    Item Funk_Button4 changed to ON
+then
+	sendCommand(Licht, OFF)
+end       
