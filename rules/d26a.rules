@@ -43,7 +43,7 @@ end
 
 rule "Button1 ON"
 when
-    Item Funk_Button1 received command ON
+    Item Funk_Button1 changed 
 then
 	sendCommand(KNX_Licht_Oben, ON)
 	sendCommand(Licht_Oben_Arbeiten_Basteltisch, ON)
