@@ -25,7 +25,7 @@ Switch KNX_Licht_Oben   "Oben"       {knx="2/0/0"}
 Switch KNX_Licht_Unten  "Unten"      {knx="2/1/0"}
 Switch KNX_Licht_Master "Master Off" {knx="2/2/0", autoupdate="false"}
 
-Switch Funk_Button1 "Funk Button1" {zwave="11:command=BASIC,respond_to_basic=true"}
-Switch Funk_Button2 "Funk Button2" {zwave="11:command=SCENE_ACTIVATION,scene=12,state=0"}
-Switch Funk_Button3 "Funk Button3" {zwave="11:command=SCENE_ACTIVATION,scene=21,state=0"}
-Switch Funk_Button4 "Funk Button4" {zwave="11:command=SCENE_ACTIVATION,scene=22,state=0"}
+Switch Funk_Button1 "Funk Button1" {zwave="11:1:command=BASIC,respond_to_basic=true"}
+Switch Funk_Button2 "Funk Button2" {zwave="11:2:command=BASIC,respond_to_basic=true"}
+Switch Funk_Button3 "Funk Button3" {zwave="11:3:command=BASIC,respond_to_basic=true"}
+Switch Funk_Button4 "Funk Button4" {zwave="11:4:command=BASIC,respond_to_basic=true"}
