@@ -43,28 +43,35 @@ end
 
 rule "Button1 ON"
 when
-    Item Funk_Button1 changed to ON
+    Item Funk_Button1 received command ON
 then
-	sendCommand(Licht_Oben, ON)
+	sendCommand(KNX_Licht_Oben, ON)
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, ON)
+    sendCommand(Licht_Oben_Schlafen, ON)
 end       
 
 rule "Button2 ON"
 when
-    Item Funk_Button2 changed to ON
+    Item Funk_Button2 received command ON
 then
-	sendCommand(Licht_Oben, OFF)
+	sendCommand(KNX_Licht_Oben, OFF)
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
+    sendCommand(Licht_Oben_Schlafen, OFF)
 end       
 
 rule "Button3 ON"
 when
-    Item Funk_Button3 changed to ON
+    Item Funk_Button3 received command ON
 then
-	sendCommand(Licht_Unten, ON)
+    sendCommand(Licht_Unten_Wohnen, ON)
 end       
 
 rule "Button4 ON"
 when
-    Item Funk_Button4 changed to ON
+    Item Funk_Button4 received command ON
 then
-	sendCommand(Licht, OFF)
+	sendCommand(KNX_Licht_Oben, OFF)
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
+    sendCommand(Licht_Oben_Schlafen, OFF)
+    sendCommand(Licht_Unten_Wohnen, OFF)
 end       
