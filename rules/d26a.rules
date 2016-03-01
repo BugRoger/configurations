@@ -3,39 +3,49 @@ rule "Master OFF"
 when
     Item KNX_Licht_Master received command OFF
 then
+	logInfo("d26a.licht", "KNX_Licht_Master(OFF) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
     sendCommand(Licht_Oben_Schlafen, OFF)
     sendCommand(Licht_Unten_Wohnen, OFF)
+	logInfo("d26a.licht", "KNX_Licht_Master(OFF) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 rule "Licht Oben An"
 when
     Item KNX_Licht_Oben received command ON
 then
+	logInfo("d26a.licht", "KNX_Licht_Oben(ON) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 	sendCommand(Licht_Oben_Arbeiten_Basteltisch, ON)
     sendCommand(Licht_Oben_Schlafen, ON)
+	logInfo("d26a.licht", "KNX_Licht_Oben(ON) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 rule "Licht Oben Aus"
 when
     Item KNX_Licht_Oben received command OFF
 then
+	logInfo("d26a.licht", "KNX_Licht_Oben(OFF) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
     sendCommand(Licht_Oben_Schlafen, OFF)
+	logInfo("d26a.licht", "KNX_Licht_Oben(OFF) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 rule "Licht Unten An"
 when
     Item KNX_Licht_Unten received command ON
 then
+	logInfo("d26a.licht", "KNX_Licht_Unten(ON) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 	sendCommand(Licht_Unten_Wohnen, ON)
+	logInfo("d26a.licht", "KNX_Licht_Unten(ON) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 rule "Licht Unten Aus"
 when
     Item KNX_Licht_Unten received command OFF
 then
+	logInfo("d26a.licht", "KNX_Licht_Unten(OFF) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 	sendCommand(Licht_Unten_Wohnen, OFF)
+	logInfo("d26a.licht", "KNX_Licht_Unten(OFF) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 
@@ -43,14 +53,16 @@ end
 
 rule "KNX Backlight ON"
 when
-    Item Licht_Oben_Arbeiten_Basteltisch received command ON
+    Item Licht_Oben_Arbeiten_Basteltisch changed from OFF to ON
 then
-	sendCommand(KNX_Licht_Oben, ON)
+	logInfo("d26a.licht", "Licht_Oben_Arbeiten_Basteltisch(ON) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
+	logInfo("d26a.licht", "Licht_Oben_Arbeiten_Basteltisch(ON) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
 
 rule "KNX Backlight Off"
 when
     Item Licht_Oben_Arbeiten_Basteltisch received command OFF
 then
-	sendCommand(KNX_Licht_Oben, OFF)
+	logInfo("d26a.licht", "Licht_Oben_Arbeiten_Basteltisch(OFF) - BEGIN [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
+	logInfo("d26a.licht", "Licht_Oben_Arbeiten_Basteltisch(OFF) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
