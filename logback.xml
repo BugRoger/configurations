@@ -32,7 +32,7 @@
     <appender-ref ref="EVENTFILE" />
     <appender-ref ref="STDOUT" />
   </logger>
-  <logger name="tuwien.auto.calimero" level="DEBUG" />
+  <logger name="tuwien.auto.calimero" level="INFO" />
   <logger name="org.openhab" level="INFO" />
   <logger name="org.eclipse.smarthome" level="WARN" />
 
@@ -44,7 +44,7 @@
     <logger name="javax.jmdns.impl.constants" level="OFF"/>
 
   <!-- Change DEBUG->TRACE for even more detailed logging -->
-  <logger name="org.openhab.binding.zwave" level="TRACE" additivity="false">
+  <logger name="org.openhab.binding.zwave" level="INFO" additivity="false">
    <appender-ref ref="STDOUT" />
   </logger>
 
