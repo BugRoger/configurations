@@ -1,10 +1,5 @@
 sitemap demo label="d26a"
 {
-	Frame {
-		Group item=Unten 
-		Group item=Oben 
-	}
-
 	Frame label="Licht" {
 		Switch item=Licht 		
 		Switch item=Licht_Oben 		
