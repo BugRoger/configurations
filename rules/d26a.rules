@@ -72,3 +72,26 @@ then
 	}
 	logInfo("d26a.licht", "Licht_Oben_Arbeiten_Basteltisch(OFF) - END   [{}] [{}] [{}] [{}] [{}] [{}]", KNX_Licht_Master.state, KNX_Licht_Oben.state, KNX_Licht_Unten.state, Licht_Oben_Arbeiten_Basteltisch, Licht_Oben_Schlafen, Licht_Unten_Wohnen)
 end       
+
+
+rule "Virtual Oben An"
+when
+	Item Oben received command ON
+then
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, ON)
+    sendCommand(Licht_Oben_Schlafen, ON)
+    if (KNX_Licht_Oben.state == OFF) {
+		sendCommand(KNX_Licht_Oben, ON)
+	}
+end
+
+rule "Virtual Oben Aus"
+when
+	Item Oben received command OFF
+then
+	sendCommand(Licht_Oben_Arbeiten_Basteltisch, OFF)
+    sendCommand(Licht_Oben_Schlafen, OFF)
+    if (KNX_Licht_Oben.state == ON) {
+		sendCommand(KNX_Licht_Oben, OFF)
+	}
+end

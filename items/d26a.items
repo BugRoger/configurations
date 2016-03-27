@@ -13,8 +13,8 @@ Group Oben_Schlafen   "Bett"	        (Oben)
 
 /* active groups */
 Group:Switch:OR(ON, OFF)	Licht	    "Alles [(%d)]"	(Licht_Oben,Licht_Unten) 
-Group:Switch:OR(ON, OFF)	Licht_Oben	"Oben [(%d)]"	(Licht_Oben_Arbeiten_Basteltisch,Licht_Oben_Schlafen,KNX_Licht_Oben) 
-Group:Switch:OR(ON, OFF)	Licht_Unten	"Unten [(%d)]"	(Licht_Unten_Wohnen) 
+Group:Switch:OR(ON, OFF)	Licht_Oben	"Oben [(%d)]"	 
+Group:Switch:OR(ON, OFF)	Licht_Unten	"Unten [(%d)]"	 
 
 /* Lights */
 Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"     {zwave="2:command=SWITCH_BINARY"}
