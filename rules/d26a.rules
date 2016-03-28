@@ -3,81 +3,37 @@ rule "Master OFF"
 when
     Item KNX_Licht_Master received command OFF
 then
-	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, OFF)
-    sendCommand(ZWAVE_Licht_Oben_Schlafen, OFF)
-    sendCommand(ZWAVE_Licht_Unten_Wohnen, OFF)
+	sendCommand(sZwaveBedroom, OFF)
+    sendCommand(sZwaveLivingroom, OFF)
+    sendCommand(sZwaveOffice, OFF)
 end       
 
 rule "Licht Oben An"
 when
-    Item KNX_Licht_Oben received command ON
+    Item sKnxBacklight received command ON
 then
-	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, ON)
-    sendCommand(ZWAVE_Licht_Oben_Schlafen, ON)
+	sendCommand(sZwaveBedroom, ON)
+    sendCommand(sZwaveOffice, ON)
 end       
 
 rule "Licht Oben Aus"
 when
-    Item KNX_Licht_Oben received command OFF
+    Item sKnxBacklight received command OFF
 then
-	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, OFF)
-    sendCommand(ZWAVE_Licht_Oben_Schlafen, OFF)
+    sendCommand(sZwaveBedroom, OFF)
+	sendCommand(sZwaveOffice, OFF)
 end       
 
 rule "Licht Unten An"
 when
     Item KNX_Licht_Unten received command ON
 then
-	sendCommand(ZWAVE_Licht_Unten_Wohnen, ON)
+	sendCommand(sZwaveLivingroom, ON)
 end       
 
 rule "Licht Unten Aus"
 when
     Item KNX_Licht_Unten received command OFF
 then
-	sendCommand(ZWAVE_Licht_Unten_Wohnen, OFF)
+	sendCommand(sZwaveLivingroom, OFF)
 end       
-
-
-
-
-rule "KNX Backlight ON"
-when
-    Item Licht_Oben_Arbeiten_Basteltisch received command ON
-then
-	if (KNX_Licht_Oben.state == OFF) {
-		sendCommand(KNX_Licht_Oben, ON)
-	}
-end       
-
-rule "KNX Backlight Off"
-when
-    Item Licht_Oben_Arbeiten_Basteltisch received command OFF
-then
-	if (KNX_Licht_Oben.state == ON) {
-		sendCommand(KNX_Licht_Oben, OFF)
-	}
-end       
-
-
-rule "Virtual Oben An"
-when
-	Item Oben received update ON
-then
-	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, ON)
-    sendCommand(ZWAVE_Licht_Oben_Schlafen, ON)
-    if (KNX_Licht_Oben.state == OFF) {
-		sendCommand(KNX_Licht_Oben, ON)
-	}
-end
-
-rule "Virtual Oben Aus"
-when
-	Item Oben received update OFF
-then
-	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, OFF)
-    sendCommand(ZWAVE_Licht_Oben_Schlafen, OFF)
-    if (KNX_Licht_Oben.state == ON) {
-		sendCommand(KNX_Licht_Oben, OFF)
-	}
-end

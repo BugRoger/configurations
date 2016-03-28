@@ -15,24 +15,19 @@ sitemap demo label="d26a"
 			}
 		}
 		Text label="ZWave" {
-			Frame label="Zwave" {
-				Switch item=ZWAVE_Licht_Oben_Arbeiten_Basteltisch
-				Switch item=ZWAVE_Licht_Oben_Schlafen
-				Switch item=ZWAVE_Licht_Unten_Wohnen
+			Frame label="ZWave" {
+				Switch item=sZwaveBedroom
+				Switch item=sZwaveLivingroom
+				Switch item=sZwaveOffice
 			}	
 		}
 		Text label="KNX" {
 			Frame label="KNX" {
-				Switch item=KNX_Licht_Oben
+				Switch item=sKnxBacklight
 				Switch item=KNX_Licht_Unten
 				Switch item=KNX_Licht_Master
 			}						
 		}
 	}
-		
-	Frame label="Licht" {
-		Switch item=Licht 		
-		Switch item=Licht_Oben 		
-		Switch item=Licht_Unten 
-	}
+
 }
