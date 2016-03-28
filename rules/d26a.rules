@@ -22,3 +22,11 @@ when
 then
 	sendCommand(sZwaveLivingroom, receivedCommand)
 end       
+
+rule "Zwave to KNX: Upper Lights"
+when
+    Item sZwaveBedroom received command or
+    Item sZwaveOffice received command 
+then
+	sendCommand(sKnxBacklight, receivedCommand)
+end       
