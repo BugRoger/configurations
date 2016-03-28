@@ -18,6 +18,13 @@ sitemap demo label="d26a"
 		Group item=gRoomLivingroom
 	}	
 	
+	Frame label="Lights" {
+		Switch item=gSLights
+		Group item=gRoomOffice
+		Group item=gRoomLivingroom
+	}	
+	
+	
 	
 	Frame label="Licht" {
 		Switch item=Licht 		
