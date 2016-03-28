@@ -1,25 +1,12 @@
-Group All
-Group Oben            "Oben"            (All)
-Group Unten           "Unten"           (All)
-Group Unten_Kueche    "Kueche"          (Unten)
-Group Unten_Bad       "Bad"             (Unten)
-Group Unten_Flur      "Flur"            (Unten)
-Group Unten_Geruempel "Geruempelkammer" (Unten)
-Group Unten_Spielen   "Spielzimmer"     (Unten)
-Group Unten_Essen     "Esszimmer"       (Unten)
-Group Unten_Wohnen    "Wohnzimmer"      (Unten)
-Group Oben_Arbeiten   "Schreibtisch"    (Oben)
-Group Oben_Schlafen   "Bett"	        (Oben)
-
 /* active groups */
 Group:Switch:OR(ON, OFF)	Licht	    "Alles [(%d)]"	
 Group:Switch:OR(ON, OFF)	Licht_Oben	"Oben [(%d)]"	(Licht)  
 Group:Switch:OR(ON, OFF)	Licht_Unten	"Unten [(%d)]"	(Licht)
 
 /* Lights */
-Switch Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"     {zwave="2:command=SWITCH_BINARY"}
-Switch Licht_Oben_Schlafen                   "Schlafen"        {zwave="4:command=SWITCH_BINARY"}
-Switch Licht_Unten_Wohnen                    "Wohnen"          {zwave="5:command=SWITCH_BINARY"}
+Switch ZWAVE_Licht_Oben_Arbeiten_Basteltisch       "Basteltisch"     {zwave="2:command=SWITCH_BINARY"}
+Switch ZWAVE_Licht_Oben_Schlafen                   "Schlafen"        {zwave="4:command=SWITCH_BINARY"}
+Switch ZWAVE_Licht_Unten_Wohnen                    "Wohnen"          {zwave="5:command=SWITCH_BINARY"}
 
 Switch KNX_Licht_Oben   "Oben"       {knx="2/0/0+2/0/1"}
 Switch KNX_Licht_Unten  "Unten"      {knx="2/1/0"}

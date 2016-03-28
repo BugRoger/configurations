@@ -5,4 +5,17 @@ sitemap demo label="d26a"
 		Switch item=Licht_Oben 		
 		Switch item=Licht_Unten 
 	}
+	
+	Frame label="Funk" {
+		Switch item=ZWAVE_Licht_Oben_Arbeiten_Basteltisch
+		Switch item=ZWAVE_Licht_Oben_Schlafen
+		Switch item=ZWAVE_Licht_Unten_Wohnen
+	}	
+	
+	Frame label="KNX" {
+		Switch item=KNX_Licht_Oben
+		Switch item=KNX_Licht_Unten
+		Switch item=KNX_Licht_Master
+	}	
+	
 }
