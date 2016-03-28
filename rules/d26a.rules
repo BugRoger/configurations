@@ -18,7 +18,7 @@ end
 
 rule "KNX to Zwave: Lower Lights"
 when
-    Item KNX_Licht_Unten received command OFF
+    Item KNX_Licht_Unten received command 
 then
-	sendCommand(sZwaveLivingroom, OFF)
+	sendCommand(sZwaveLivingroom, receivedCommand)
 end       
