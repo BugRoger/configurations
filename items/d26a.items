@@ -12,17 +12,17 @@ Group gRoomBathroom   "Bathroom"    (gAll,gFloorLower)
 Group gRoomPlayroom   "Playroom"    (gAll,gFloorLower)
 
 Group:Switch:OR(ON, OFF) gSLights	        "All Lights [(%d)]"	        (gLights)
-Group:Switch:OR(ON, OFF) gSLightsUpperFloor	"Upper Floor Lights [(%d)]"	(gSLights)
-Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	(gSLights)
-Group:Switch:OR(ON, OFF) gSLightsBedroom	"Bedroom Lights [(%d)]"	    (gSLightsUpperFloor)
-Group:Switch:OR(ON, OFF) gSLightsOffice  	"Computer Lights [(%d)]"	(gSLightsUpperFloor)
-Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	(gSLightsLowerFloor)
+Group:Switch:OR(ON, OFF) gSLightsUpperFloor	"Upper Floor Lights [(%d)]"	(gLights)
+Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	(gLights)
+Group:Switch:OR(ON, OFF) gSLightsBedroom	"Bedroom Lights [(%d)]"	    (gLights)
+Group:Switch:OR(ON, OFF) gSLightsOffice  	"Computer Lights [(%d)]"	(gLights)
+Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	(gLights)
 
 
-Switch sZwaveOffice     "Workbench"   (gLights,gRoomOffice,gSLightsOffice)         {zwave="2:command=SWITCH_BINARY"} 
-Switch sZwaveBedroom    "Bedroom"     (gLights,gRoomBedroom,gSLightsBedroom)       {zwave="4:command=SWITCH_BINARY"} 
-Switch sZwaveLivingroom "Living Room" (gLights,gRoomLivingroom,gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
-Switch sKnxBacklight    "Backlight"   (gLights,gRoomOffice,gSLightsOffice)         {knx="2/0/0+2/0/1"}
+Switch sZwaveOffice     "Workbench"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {zwave="2:command=SWITCH_BINARY"} 
+Switch sZwaveBedroom    "Bedroom"     (gLights,gRoomBedroom,gSLights,gSLightsUpperFloor,gSLightsBedroom)       {zwave="4:command=SWITCH_BINARY"} 
+Switch sZwaveLivingroom "Living Room" (gLights,gRoomLivingroom,gSLights,gSLightsLowerFloor,gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
+Switch sKnxBacklight    "Backlight"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {knx="2/0/0+2/0/1"}
 
 
 
