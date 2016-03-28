@@ -2,6 +2,9 @@ sitemap demo label="d26a"
 {
 	Frame label="Debug" {
 		Group item=gAll
+		Switch item=gSLights
+		Switch item=gSLightsUpperFloor
+		Switch item=gSLightsLowerFloor
 	}
 	Frame label="Licht" {
 		Switch item=Licht 		

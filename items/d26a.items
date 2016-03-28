@@ -12,17 +12,17 @@ Group gRoomBathroom   "Bathroom"    (gAll,gFloorLower)
 Group gRoomPlayroom   "Playroom"    (gAll,gFloorLower)
 
 Group:Switch:OR(ON, OFF) gSLights	        "All Lights [(%d)]"	        (gLights)
-Group:Switch:OR(ON, OFF) gSLightsUpperFloor	"Upper Floor Lights [(%d)]"	(gLights)
-Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	(gLights)
-Group:Switch:OR(ON, OFF) gSLightsBedroom	"Bedroom Lights [(%d)]"	    (gLights)
-Group:Switch:OR(ON, OFF) gSLightsOffice  	"Computer Lights [(%d)]"	(gLights)
-Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	(gLights)
+Group:Switch:OR(ON, OFF) gSLightsUpperFloor	"Upper Floor Lights [(%d)]"	(gFloorUpper,gSLights)
+Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	(gFloorLower,gSLights)
+Group:Switch:OR(ON, OFF) gSLightsBedroom	"Bedroom Lights [(%d)]"	    (gRoomBedroom,gSLightsUpperFloor)
+Group:Switch:OR(ON, OFF) gSLightsOffice  	"Computer Lights [(%d)]"	(gRoomOffice,gSLightsUpperFloor)
+Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	(gRoomLivingroom,gSLightsLowerFloor)
 
 
-Switch sZwaveOffice     "Workbench"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {zwave="2:command=SWITCH_BINARY"} 
-Switch sZwaveBedroom    "Bedroom"     (gLights,gRoomBedroom,gSLights,gSLightsUpperFloor,gSLightsBedroom)       {zwave="4:command=SWITCH_BINARY"} 
-Switch sZwaveLivingroom "Living Room" (gLights,gRoomLivingroom,gSLights,gSLightsLowerFloor,gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
-Switch sKnxBacklight    "Backlight"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {knx="2/0/0+2/0/1"}
+Switch sZwaveOffice     "Workbench"   (gSLightsOffice)     {zwave="2:command=SWITCH_BINARY"} 
+Switch sZwaveBedroom    "Bedroom"     (gSLightsBedroom)    {zwave="4:command=SWITCH_BINARY"} 
+Switch sZwaveLivingroom "Living Room" (gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
+Switch sKnxBacklight    "Backlight"   (gSLightsOffice)     {knx="2/0/0+2/0/1"}
 
 
 
