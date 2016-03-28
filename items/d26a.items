@@ -1,3 +1,31 @@
+Group gAll
+Group gFloorUpper     "Upper Floor" (gAll)
+Group gFloorLower     "Lower Floor" (gAll)
+Group gLights         "Lights"      (gAll)
+Group gApplicances    "Appliances"  (gAll)
+Group gRoomBedroom    "Bedroom"     (gAll,gFloorUpper)
+Group gRoomOffice     "Computers"   (gAll,gFloorUpper)
+Group gRoomLivingroom "Living Room" (gAll,gFloorLower)
+Group gRoomKitchen    "Kitchen"     (gAll,gFloorLower)
+Group gRoomHallway    "Hallway"     (gAll,gFloorLower)
+Group gRoomBathroom   "Bathroom"    (gAll,gFloorLower)
+Group gRoomPlayroom   "Playroom"    (gAll,gFloorLower)
+
+Group:Switch:OR(ON, OFF) gSLights	        "All Lights [(%d)]"	
+Group:Switch:OR(ON, OFF) gSLightsUpperFloor	"Upper Floor Lights [(%d)]"	
+Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	
+Group:Switch:OR(ON, OFF) gSLightsBedroom	"Bedroom Lights [(%d)]"	
+Group:Switch:OR(ON, OFF) gSLightsOffice  	"Computer Lights [(%d)]"	
+Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	
+
+
+Switch sZwaveOffice     "Workbench"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {zwave="2:command=SWITCH_BINARY"} 
+Switch sZwaveBedroom    "Bedroom"     (gLights,gRoomBedroom,gSLights,gSLightsUpperFloor,gSLightsBedroom)       {zwave="4:command=SWITCH_BINARY"} 
+Switch sZwaveLivingroom "Living Room" (gLights,gRoomLivingroom,gSLights,gSLightsLowerFloor,gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
+Switch sKnxBacklight    "Backlight"   (gLights,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {knx="2/0/0+2/0/1"}
+
+
+
 /* active groups */
 Group:Switch:OR(ON, OFF)	Licht	    "Alles [(%d)]"	
 Group:Switch:OR(ON, OFF)	Licht_Oben	"Oben [(%d)]"	(Licht)  

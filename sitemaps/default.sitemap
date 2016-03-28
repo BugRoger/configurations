@@ -1,5 +1,8 @@
 sitemap demo label="d26a"
 {
+	Frame label="Debug" {
+		Group item=gAll
+	}
 	Frame label="Licht" {
 		Switch item=Licht 		
 		Switch item=Licht_Oben 		
