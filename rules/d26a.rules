@@ -1,39 +1,24 @@
-
-rule "Master OFF"
+rule "KNX to Zwave: Master"
 when
-    Item KNX_Licht_Master received command OFF
+    Item KNX_Licht_Master received command
 then
-	sendCommand(sZwaveBedroom, OFF)
-    sendCommand(sZwaveLivingroom, OFF)
-    sendCommand(sZwaveOffice, OFF)
+	sendCommand(sZwaveBedroom, receivedCommand)
+    sendCommand(sZwaveLivingroom, receivedCommand)
+    sendCommand(sZwaveOffice, receivedCommand)
 end       
 
-rule "Licht Oben An"
+rule "KNX to Zwave: Upper Lights"
 when
-    Item sKnxBacklight received command ON
+    Item sKnxBacklight received command
 then
-	sendCommand(sZwaveBedroom, ON)
-    sendCommand(sZwaveOffice, ON)
+	sendCommand(sZwaveBedroom, receivedCommand)
+    sendCommand(sZwaveOffice, receivedCommand)
 end       
 
-rule "Licht Oben Aus"
-when
-    Item sKnxBacklight received command OFF
-then
-    sendCommand(sZwaveBedroom, OFF)
-	sendCommand(sZwaveOffice, OFF)
-end       
 
-rule "Licht Unten An"
+rule "KNX to Zwave: Lower Lights"
 when
-    Item KNX_Licht_Unten received command ON
+    Item KNX_Licht_Unten received command 
 then
-	sendCommand(sZwaveLivingroom, ON)
-end       
-
-rule "Licht Unten Aus"
-when
-    Item KNX_Licht_Unten received command OFF
-then
-	sendCommand(sZwaveLivingroom, OFF)
+	sendCommand(sZwaveLivingroom, receivedCommand)
 end       
