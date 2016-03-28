@@ -1,30 +1,16 @@
 sitemap demo label="d26a"
 {
 	Frame label="Debug" {
-		Group item=gAll
-		Switch item=gSLights
-		Switch item=gSLightsUpperFloor
-		Switch item=gSLightsLowerFloor
+		Group item=gFloors
+		Group item=gRooms
+		Group item=gCategories
 	}
-	
-	Frame label="Floors" {
-		Group item=gFloorLower
-		Group item=gFloorUpper
-	}
-	
-	Frame label="Rooms" {
-		Group item=gRoomBedroom
-		Group item=gRoomOffice
-		Group item=gRoomLivingroom
-	}	
 	
 	Frame label="Lights" {
 		Switch item=gSLights
-		Group item=gRoomOffice
-		Group item=gRoomLivingroom
+		Switch item=gSLightsUpperFloor
+		Switch item=gSLightsLowerFloor
 	}	
-	
-	
 	
 	Frame label="Licht" {
 		Switch item=Licht 		
