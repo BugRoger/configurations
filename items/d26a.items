@@ -23,7 +23,7 @@ Group:Switch:OR(ON, OFF) gSLightsLowerFloor	"Lower Floor Lights [(%d)]"	(gGroups
 Switch sZwaveOffice     "Workbench"   (gLights,gFloorUpper,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {zwave="2:command=SWITCH_BINARY"} 
 Switch sZwaveBedroom    "Bedroom"     (gLights,gFloorUpper,gRoomBedroom,gSLights,gSLightsUpperFloor,gSLightsBedroom)       {zwave="4:command=SWITCH_BINARY"} 
 Switch sZwaveLivingroom "Living Room" (gLights,gFloorLower,gRoomLivingroom,gSLights,gSLightsLowerFloor,gSLightsLivingroom) {zwave="5:command=SWITCH_BINARY"} 
-Switch sKnxBacklight    "Backlight"   (gLights,gFloorUpper,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {knx="2/0/0+2/0/1"}
+Switch sKnxBacklight    "Backlight"   (gLights,gFloorUpper,gRoomOffice,gSLights,gSLightsUpperFloor,gSLightsOffice)         {knx="2/0/0+<2/0/1"}
 
 
 
