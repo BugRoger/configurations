@@ -62,7 +62,7 @@ end
 
 rule "Virtual Oben An"
 when
-	Item Oben received command ON
+	Item Oben received update ON
 then
 	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, ON)
     sendCommand(ZWAVE_Licht_Oben_Schlafen, ON)
@@ -73,7 +73,7 @@ end
 
 rule "Virtual Oben Aus"
 when
-	Item Oben received command OFF
+	Item Oben received update OFF
 then
 	sendCommand(ZWAVE_Licht_Oben_Arbeiten_Basteltisch, OFF)
     sendCommand(ZWAVE_Licht_Oben_Schlafen, OFF)
