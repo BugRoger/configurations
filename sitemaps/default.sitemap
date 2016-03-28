@@ -6,6 +6,19 @@ sitemap demo label="d26a"
 		Switch item=gSLightsUpperFloor
 		Switch item=gSLightsLowerFloor
 	}
+	
+	Frame label="Floors" {
+		Group item=gFloorLower
+		Group item=gFloorUpper
+	}
+	
+	Frame label="Rooms" {
+		Group item=gRoomBedroom
+		Group item=gRoomOffice
+		Group item=gRoomLivingroom
+	}	
+	
+	
 	Frame label="Licht" {
 		Switch item=Licht 		
 		Switch item=Licht_Oben 		

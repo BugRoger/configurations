@@ -21,7 +21,7 @@ Group:Switch:OR(ON, OFF) gSLightsLivingroom	"Living Room Lights [(%d)]"	(gRoomLi
 
 Switch sZwaveOffice     "Workbench"   (gSLightsOffice)     {zwave="2:command=SWITCH_BINARY"} 
 Switch sZwaveBedroom    "Bedroom"     (gSLightsBedroom)    {zwave="4:command=SWITCH_BINARY"} 
-Switch sZwaveLivingroom "Living Room" (gSLightsLivingRoom) {zwave="5:command=SWITCH_BINARY"} 
+Switch sZwaveLivingroom "Living Room" (gSLightsLivingroom) {zwave="5:command=SWITCH_BINARY"} 
 Switch sKnxBacklight    "Backlight"   (gSLightsOffice)     {knx="2/0/0+2/0/1"}
 
 
